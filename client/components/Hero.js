@@ -10,7 +10,7 @@ export const Hero = () => {
                         <a href="#" className="relative h-72 w-full hidden md:flex items-center bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
                             <div className="basis-2/3 flex flex-col gap-4 justify-center pl-8 z-10">
                                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 text-center">
-                                    "Where did you buy this?"
+                                &quot;Where did you buy this?&quot;
                                 </h5>
                                 <h5 className="bg-blue-500 text-5xl font-bold p-2 text-white rounded-lg text-center">FROM DUBAI</h5>
                             </div>
@@ -23,7 +23,7 @@ export const Hero = () => {
                             </div>
                         </a>
                         <blockquote className="bg-white bg-opacity-70 p-4 rounded-lg mt-2 sm:mt-4 mb-6 sm:mb-8 text-xl text-center italic font-semibold text-gray-900">
-                            <p>"Whether you're a traveler or a shopper, BringMyBling bridges the gap and makes international shopping effortless."</p>
+                            <p>&quot;Whether you&apos;re a traveler or a shopper, BringMyBling bridges the gap and makes international shopping effortless.&quot;</p>
                         </blockquote>
                         <a href="#" className="mt-4 px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100">
                             Find Travelers

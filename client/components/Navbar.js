@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import Image from 'next/image'
 import { signIn, signOut, useSession } from "next-auth/react";
 
@@ -8,9 +9,9 @@ export const Navbar = () => {
         <div className="relative top-0 left-0 mt-2 w-screen">
             <nav className="block w-full max-w-screen-lg px-4 py-2 mx-auto text-white bg-white shadow-md rounded-md lg:px-8 lg:py-3">
                 <div className="container flex flex-wrap items-center justify-between mx-auto text-slate-800">
-                    <a href="/" className="mr-4 block cursor-pointer py-1.5 text-base text-slate-800 font-semibold">
+                    <Link href="/" className="mr-4 block cursor-pointer py-1.5 text-base text-slate-800 font-semibold">
                         bmb.
-                    </a>
+                    </Link>
                     <div className="hidden md:block">
                         <ul className="flex flex-col gap-2 mt-2 mb-4 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-6">
                             <li className="flex items-center p-1 text-sm gap-x-2 text-slate-600">
