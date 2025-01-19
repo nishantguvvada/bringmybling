@@ -1,6 +1,6 @@
 export const Review = () => {
     return (
-    <div className="w-full flex justify-center items-center">
+    <div className="w-full flex justify-center items-center border-t-1 shadow mt-8 pt-8">
         <div className="p-10 flex justify-center items-center w-[80%]">
             <article className="md:gap-4 md:grid md:grid-cols-3">
                 <div>
@@ -26,14 +26,14 @@ export const Review = () => {
                     <div className="flex justify-between items-start mb-5">
                         <div className="pe-4">
                             <footer>
-                                <p className="mb-2 text-sm text-gray-500">Reviewed: <time datetime="2022-01-20 19:00">January 20, 2025</time></p>
-                                <p className="mb-2 text-sm text-gray-500">By: <time datetime="2022-01-20 19:00">Jane Doe</time></p>
+                                <p className="mb-2 text-sm text-gray-500">Reviewed: <time dateTime="2022-01-20 19:00">January 20, 2025</time></p>
+                                <p className="mb-2 text-sm text-gray-500">By: <time dateTime="2022-01-20 19:00">Jane Doe</time></p>
                             </footer>
-                            <h4 className="mt-4 text-xl font-bold text-gray-900">"Janani Made My Dubai Purchase Easy and Hassle-Free!"</h4>
+                            <h4 className="mt-4 text-xl text-justify font-bold text-gray-900">"Janani Made My Dubai Purchase Easy and Hassle-Free!"</h4>
                         </div>
                         <p className="bg-blue-700 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">8.7</p>
                     </div>
-                    <p className="mb-2 text-gray-500">"I had a fantastic experience with Janani as my traveler! From the moment we connected, she was professional, friendly, and extremely reliable. She kept me updated throughout her trip to Dubai, sent pictures of the item I requested, and ensured everything was handled with care. The delivery was on time, and my item arrived in perfect condition. What stood out most was her attention to detail and how approachable she was, which made the entire process smooth and stress-free. I highly recommend Sarah to anyone looking for a trustworthy traveler. This platform is a game-changer for luxury shopping!"</p>
+                    <p className="mb-2 text-justify text-gray-500">"I had a fantastic experience with Janani as my traveler! From the moment we connected, she was professional, friendly, and extremely reliable. She kept me updated throughout her trip to Dubai, sent pictures of the item I requested, and ensured everything was handled with care. The delivery was on time, and my item arrived in perfect condition. What stood out most was her attention to detail and how approachable she was, which made the entire process smooth and stress-free. I highly recommend Sarah to anyone looking for a trustworthy traveler. This platform is a game-changer for luxury shopping!"</p>
                     <aside className="flex items-center mt-3">
                         <a href="#" className="inline-flex items-center text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
                             <svg className="w-3.5 h-3.5 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
