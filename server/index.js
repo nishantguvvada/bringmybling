@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const rateLimit = require('express-rate-limit');
 const { Product, Price } = require("./db/db.js");
 const { default: Stripe } = require("stripe");
 require("dotenv").config();
@@ -8,6 +9,13 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
 
+const limiter = rateLimit({
+    windowMs: 1 * 60 * 1000,
+    max: 100,
+    message: 'Too many requests from this IP, please try again after 1 minute',
+})
+  
+app.use(limiter);
 app.use(express.json());
 app.use(cors());
 
@@ -63,7 +71,7 @@ app.post("/create-checkout-session", async (req, res) => {
             }
         }));
 
-        console.log("line items", line_items);
+        // console.log("line items", line_items);
 
         const session = await stripe.checkout.sessions.create({
             mode: 'payment',
@@ -79,4 +87,4 @@ app.post("/create-checkout-session", async (req, res) => {
     }
 });
 
-app.listen(3000);
+app.listen(3001);
