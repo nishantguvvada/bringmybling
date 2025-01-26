@@ -14,10 +14,18 @@ const PriceSchema = new mongoose.Schema({
     product: ProductSchema.path('_id')
 })
 
+const UserSchema = new mongoose.Schema({
+    username: String,
+    email: String,
+    password: String,
+});
+
 const Product = mongoose.model("Product", ProductSchema);
 const Price = mongoose.model("Price", PriceSchema);
+const User = mongoose.model("User", UserSchema);
 
 module.exports = {
     Product,
-    Price
+    Price,
+    User
 }

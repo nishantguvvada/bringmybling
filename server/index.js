@@ -1,7 +1,9 @@
 const express = require("express");
 const cors = require("cors");
+const bcrypt = require('bcryptjs');
 const rateLimit = require('express-rate-limit');
-const { Product, Price } = require("./db/db.js");
+const { Product, Price, User } = require("./db/db.js");
+const { signupValidation } = require("./middlewares/SignupValidation.js");
 const { default: Stripe } = require("stripe");
 require("dotenv").config();
 
@@ -21,6 +23,29 @@ app.use(cors());
 
 app.get("/", (req, res) => {
     return res.status(200).json({message: "server is running"});
+});
+
+app.post("/signup", signupValidation, async (req, res) => {
+    try {
+        const existingUser = await User.findOne({email: req.body.email});
+        if (existingUser) {
+            res.status(400).json({error: "User already exists, try signing in!"});
+        }
+
+        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        
+        const user = await User.create({
+            username: req.body.username,
+            email: req.body.email,
+            password: hashedPassword
+        })
+
+        user.save();
+
+        return res.status(200).json({message: "User created successfully!"});
+    } catch(err) {
+        return res.status(400).json({error: err});
+    }
 });
 
 app.post("/create-product", async (req, res) => {
